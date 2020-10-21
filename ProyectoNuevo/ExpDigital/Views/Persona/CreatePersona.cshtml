@@ -1,0 +1,117 @@
+@model ExpDigital.Models.Persona
+
+@{
+    ViewBag.Title = "CreatePersona";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Datos Personales</h1>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-2">
+
+
+                            <label for="inputEmail4">Funcionario(a)</label>
+                            <div>
+                              
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputEmail4">1er Apellido</label>
+                            <div >
+                                @Html.EditorFor(model => model.apellido1, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.apellido1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputEmail4">2ndo Apellido</label>
+                            <div >
+                                @Html.EditorFor(model => model.apellido2, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.apellido2, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputPassword4">Cedula</label>
+                            <div >
+                                @Html.EditorFor(model => model.cedula, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.cedula, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPassword4">Correo</label>
+                            <div >
+                                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputPassword4">Telefono</label>
+                            <div>
+                                @Html.EditorFor(model => model.rol, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.rol, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Departamento o Escuela</label>
+                            <div>
+                                @Html.EditorFor(model => model.categoria, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.categoria, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Puesto</label>
+                            <div>
+                                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Paso Actual</label>
+                            <input type="text" class="form-control" id="inputCed" placeholder="Paso Actual">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Paso Solicitado</label>
+                            <input type="text" class="form-control" id="inputCed" placeholder="Paso Solicitado">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Autorizo a la Comision de Carrera Profesional
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar y Guardar</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "CreatePersona")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

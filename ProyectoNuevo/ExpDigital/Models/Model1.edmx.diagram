@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="283491a481a241cb820c7901f3a3a857" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Articulo" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Capitulo" Width="1.5" PointX="5.25" PointY="12.625" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CitaDeAtestado" Width="1.5" PointX="8.25" PointY="2.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DesarrolloSoftware" Width="1.5" PointX="5.25" PointY="18.625" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Libro" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ObraAdministrativaDesarrollo" Width="1.5" PointX="8.25" PointY="15.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ObraArtistica" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ObraDidactica" Width="1.5" PointX="5.25" PointY="1.625" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.OtraObraProfesional" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Pai" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Persona" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCita" Width="1.5" PointX="10.5" PointY="5.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXDesarrolloSoftware" Width="1.5" PointX="7.5" PointY="11.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXObraAdministrativaDesarrollo" Width="1.5" PointX="10.5" PointY="8.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXObraDidactica" Width="1.5" PointX="7.5" PointY="8.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXOtraObraProfesional" Width="1.5" PointX="7.5" PointY="5.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ProyectoGraduacionGalardonado" Width="1.5" PointX="7.5" PointY="22.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.TipoObraAdmi" Width="1.5" PointX="6" PointY="15.625" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.TipoObraProfesional" Width="1.5" PointX="3" PointY="4.625" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_Articulo_Pais" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_Capitulo_Libro" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCita_CitaDeAtestados" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_DesarrolloSoftware" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_Libro_Pais" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_ObraAdministrativaDesarrollo_TipoObraAdmi" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraDidactica_ObraDidactica" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_OtraObraProfesional_TipoObraProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_OtraObraProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCita_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraDidactica_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.PersonaXArticulo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.PersonaXProyectoGraduacion" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

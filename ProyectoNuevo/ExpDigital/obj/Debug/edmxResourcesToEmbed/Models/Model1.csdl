@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExpedienteDigitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ExpedienteDigitalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Articuloes" EntityType="ExpedienteDigitalModel.Articulo" />
+    <EntitySet Name="Capituloes" EntityType="ExpedienteDigitalModel.Capitulo" />
+    <EntitySet Name="CitaDeAtestados" EntityType="ExpedienteDigitalModel.CitaDeAtestado" />
+    <EntitySet Name="DesarrolloSoftwares" EntityType="ExpedienteDigitalModel.DesarrolloSoftware" />
+    <EntitySet Name="Libroes" EntityType="ExpedienteDigitalModel.Libro" />
+    <EntitySet Name="ObraAdministrativaDesarrolloes" EntityType="ExpedienteDigitalModel.ObraAdministrativaDesarrollo" />
+    <EntitySet Name="ObraArtisticas" EntityType="ExpedienteDigitalModel.ObraArtistica" />
+    <EntitySet Name="ObraDidacticas" EntityType="ExpedienteDigitalModel.ObraDidactica" />
+    <EntitySet Name="OtraObraProfesionals" EntityType="ExpedienteDigitalModel.OtraObraProfesional" />
+    <EntitySet Name="Pais" EntityType="ExpedienteDigitalModel.Pai" />
+    <EntitySet Name="Personas" EntityType="ExpedienteDigitalModel.Persona" />
+    <EntitySet Name="PersonaXCitas" EntityType="ExpedienteDigitalModel.PersonaXCita" />
+    <EntitySet Name="PersonaXDesarrolloSoftwares" EntityType="ExpedienteDigitalModel.PersonaXDesarrolloSoftware" />
+    <EntitySet Name="PersonaXObraAdministrativaDesarrolloes" EntityType="ExpedienteDigitalModel.PersonaXObraAdministrativaDesarrollo" />
+    <EntitySet Name="PersonaXObraDidacticas" EntityType="ExpedienteDigitalModel.PersonaXObraDidactica" />
+    <EntitySet Name="PersonaXOtraObraProfesionals" EntityType="ExpedienteDigitalModel.PersonaXOtraObraProfesional" />
+    <EntitySet Name="ProyectoGraduacionGalardonadoes" EntityType="ExpedienteDigitalModel.ProyectoGraduacionGalardonado" />
+    <EntitySet Name="TipoObraAdmis" EntityType="ExpedienteDigitalModel.TipoObraAdmi" />
+    <EntitySet Name="TipoObraProfesionals" EntityType="ExpedienteDigitalModel.TipoObraProfesional" />
+    <AssociationSet Name="FK_Articulo_Pais" Association="ExpedienteDigitalModel.FK_Articulo_Pais">
+      <End Role="Pai" EntitySet="Pais" />
+      <End Role="Articulo" EntitySet="Articuloes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Capitulo_Libro" Association="ExpedienteDigitalModel.FK_Capitulo_Libro">
+      <End Role="Libro" EntitySet="Libroes" />
+      <End Role="Capitulo" EntitySet="Capituloes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXCita_CitaDeAtestados" Association="ExpedienteDigitalModel.FK_PersonaXCita_CitaDeAtestados">
+      <End Role="CitaDeAtestado" EntitySet="CitaDeAtestados" />
+      <End Role="PersonaXCita" EntitySet="PersonaXCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXDesarrolloSoftware_DesarrolloSoftware" Association="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_DesarrolloSoftware">
+      <End Role="DesarrolloSoftware" EntitySet="DesarrolloSoftwares" />
+      <End Role="PersonaXDesarrolloSoftware" EntitySet="PersonaXDesarrolloSoftwares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Libro_Pais" Association="ExpedienteDigitalModel.FK_Libro_Pais">
+      <End Role="Pai" EntitySet="Pais" />
+      <End Role="Libro" EntitySet="Libroes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObraAdministrativaDesarrollo_TipoObraAdmi" Association="ExpedienteDigitalModel.FK_ObraAdministrativaDesarrollo_TipoObraAdmi">
+      <End Role="TipoObraAdmi" EntitySet="TipoObraAdmis" />
+      <End Role="ObraAdministrativaDesarrollo" EntitySet="ObraAdministrativaDesarrolloes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo" Association="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo">
+      <End Role="ObraAdministrativaDesarrollo" EntitySet="ObraAdministrativaDesarrolloes" />
+      <End Role="PersonaXObraAdministrativaDesarrollo" EntitySet="PersonaXObraAdministrativaDesarrolloes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraDidactica_ObraDidactica" Association="ExpedienteDigitalModel.FK_PersonaXObraDidactica_ObraDidactica">
+      <End Role="ObraDidactica" EntitySet="ObraDidacticas" />
+      <End Role="PersonaXObraDidactica" EntitySet="PersonaXObraDidacticas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OtraObraProfesional_TipoObraProfesional" Association="ExpedienteDigitalModel.FK_OtraObraProfesional_TipoObraProfesional">
+      <End Role="TipoObraProfesional" EntitySet="TipoObraProfesionals" />
+      <End Role="OtraObraProfesional" EntitySet="OtraObraProfesionals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXOtraObraProfesional_OtraObraProfesional" Association="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_OtraObraProfesional">
+      <End Role="OtraObraProfesional" EntitySet="OtraObraProfesionals" />
+      <End Role="PersonaXOtraObraProfesional" EntitySet="PersonaXOtraObraProfesionals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXCita_Persona" Association="ExpedienteDigitalModel.FK_PersonaXCita_Persona">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="PersonaXCita" EntitySet="PersonaXCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXDesarrolloSoftware_Persona" Association="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_Persona">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="PersonaXDesarrolloSoftware" EntitySet="PersonaXDesarrolloSoftwares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraAdministrativaDesarrollo_Persona" Association="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_Persona">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="PersonaXObraAdministrativaDesarrollo" EntitySet="PersonaXObraAdministrativaDesarrolloes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraDidactica_Persona" Association="ExpedienteDigitalModel.FK_PersonaXObraDidactica_Persona">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="PersonaXObraDidactica" EntitySet="PersonaXObraDidacticas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXOtraObraProfesional_Persona" Association="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_Persona">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="PersonaXOtraObraProfesional" EntitySet="PersonaXOtraObraProfesionals" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaXArticulo" Association="ExpedienteDigitalModel.PersonaXArticulo">
+      <End Role="Articulo" EntitySet="Articuloes" />
+      <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaXProyectoGraduacion" Association="ExpedienteDigitalModel.PersonaXProyectoGraduacion">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="ProyectoGraduacionGalardonado" EntitySet="ProyectoGraduacionGalardonadoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAutores" Type="Int32" Nullable="false" />
+    <Property Name="anno" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="revista" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_pais" Type="Int32" Nullable="false" />
+    <Property Name="consejoEditorial" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pai" Relationship="ExpedienteDigitalModel.FK_Articulo_Pais" FromRole="Articulo" ToRole="Pai" />
+    <NavigationProperty Name="Personas" Relationship="ExpedienteDigitalModel.PersonaXArticulo" FromRole="Articulo" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Capitulo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAutores" Type="Int32" Nullable="false" />
+    <Property Name="id_libro" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Libro" Relationship="ExpedienteDigitalModel.FK_Capitulo_Libro" FromRole="Capitulo" ToRole="Libro" />
+  </EntityType>
+  <EntityType Name="CitaDeAtestado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="contrasenna" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PersonaXCitas" Relationship="ExpedienteDigitalModel.FK_PersonaXCita_CitaDeAtestados" FromRole="CitaDeAtestado" ToRole="PersonaXCita" />
+  </EntityType>
+  <EntityType Name="DesarrolloSoftware">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAutores" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PersonaXDesarrolloSoftwares" Relationship="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_DesarrolloSoftware" FromRole="DesarrolloSoftware" ToRole="PersonaXDesarrolloSoftware" />
+  </EntityType>
+  <EntityType Name="Libro">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="anno" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="editorial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consejoEditorial" Type="Int32" Nullable="false" />
+    <Property Name="id_pais" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Capituloes" Relationship="ExpedienteDigitalModel.FK_Capitulo_Libro" FromRole="Libro" ToRole="Capitulo" />
+    <NavigationProperty Name="Pai" Relationship="ExpedienteDigitalModel.FK_Libro_Pais" FromRole="Libro" ToRole="Pai" />
+  </EntityType>
+  <EntityType Name="ObraAdministrativaDesarrollo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAutores" Type="Int32" Nullable="false" />
+    <Property Name="id_tipo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TipoObraAdmi" Relationship="ExpedienteDigitalModel.FK_ObraAdministrativaDesarrollo_TipoObraAdmi" FromRole="ObraAdministrativaDesarrollo" ToRole="TipoObraAdmi" />
+    <NavigationProperty Name="PersonaXObraAdministrativaDesarrolloes" Relationship="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo" FromRole="ObraAdministrativaDesarrollo" ToRole="PersonaXObraAdministrativaDesarrollo" />
+  </EntityType>
+  <EntityType Name="ObraArtistica">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAutores" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObraDidactica">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAutores" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PersonaXObraDidacticas" Relationship="ExpedienteDigitalModel.FK_PersonaXObraDidactica_ObraDidactica" FromRole="ObraDidactica" ToRole="PersonaXObraDidactica" />
+  </EntityType>
+  <EntityType Name="OtraObraProfesional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAutores" Type="Int32" Nullable="false" />
+    <Property Name="id_tipo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TipoObraProfesional" Relationship="ExpedienteDigitalModel.FK_OtraObraProfesional_TipoObraProfesional" FromRole="OtraObraProfesional" ToRole="TipoObraProfesional" />
+    <NavigationProperty Name="PersonaXOtraObraProfesionals" Relationship="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_OtraObraProfesional" FromRole="OtraObraProfesional" ToRole="PersonaXOtraObraProfesional" />
+  </EntityType>
+  <EntityType Name="Pai">
+    <Key>
+      <PropertyRef Name="id_pais" />
+    </Key>
+    <Property Name="id_pais" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Articuloes" Relationship="ExpedienteDigitalModel.FK_Articulo_Pais" FromRole="Pai" ToRole="Articulo" />
+    <NavigationProperty Name="Libroes" Relationship="ExpedienteDigitalModel.FK_Libro_Pais" FromRole="Pai" ToRole="Libro" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cedula" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="apellido1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="apellido2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="categoria" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rol" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PersonaXCitas" Relationship="ExpedienteDigitalModel.FK_PersonaXCita_Persona" FromRole="Persona" ToRole="PersonaXCita" />
+    <NavigationProperty Name="PersonaXDesarrolloSoftwares" Relationship="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_Persona" FromRole="Persona" ToRole="PersonaXDesarrolloSoftware" />
+    <NavigationProperty Name="PersonaXObraAdministrativaDesarrolloes" Relationship="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_Persona" FromRole="Persona" ToRole="PersonaXObraAdministrativaDesarrollo" />
+    <NavigationProperty Name="PersonaXObraDidacticas" Relationship="ExpedienteDigitalModel.FK_PersonaXObraDidactica_Persona" FromRole="Persona" ToRole="PersonaXObraDidactica" />
+    <NavigationProperty Name="PersonaXOtraObraProfesionals" Relationship="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_Persona" FromRole="Persona" ToRole="PersonaXOtraObraProfesional" />
+    <NavigationProperty Name="Articuloes" Relationship="ExpedienteDigitalModel.PersonaXArticulo" FromRole="Persona" ToRole="Articulo" />
+    <NavigationProperty Name="ProyectoGraduacionGalardonadoes" Relationship="ExpedienteDigitalModel.PersonaXProyectoGraduacion" FromRole="Persona" ToRole="ProyectoGraduacionGalardonado" />
+  </EntityType>
+  <EntityType Name="PersonaXCita">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_cita" />
+    </Key>
+    <Property Name="id_persona_x_cita" Type="Int32" Nullable="false" />
+    <Property Name="id_persona" Type="Int32" Nullable="false" />
+    <Property Name="id_cita" Type="Int32" Nullable="false" />
+    <Property Name="fechaEntrega" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CitaDeAtestado" Relationship="ExpedienteDigitalModel.FK_PersonaXCita_CitaDeAtestados" FromRole="PersonaXCita" ToRole="CitaDeAtestado" />
+    <NavigationProperty Name="Persona" Relationship="ExpedienteDigitalModel.FK_PersonaXCita_Persona" FromRole="PersonaXCita" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="PersonaXDesarrolloSoftware">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_desarrollo_software" />
+    </Key>
+    <Property Name="id_persona" Type="Int32" Nullable="false" />
+    <Property Name="id_desarrollo_software" Type="Int32" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+    <NavigationProperty Name="DesarrolloSoftware" Relationship="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_DesarrolloSoftware" FromRole="PersonaXDesarrolloSoftware" ToRole="DesarrolloSoftware" />
+    <NavigationProperty Name="Persona" Relationship="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_Persona" FromRole="PersonaXDesarrolloSoftware" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="PersonaXObraAdministrativaDesarrollo">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_obra_administrativa" />
+    </Key>
+    <Property Name="id_persona" Type="Int32" Nullable="false" />
+    <Property Name="id_obra_administrativa" Type="Int32" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+    <NavigationProperty Name="ObraAdministrativaDesarrollo" Relationship="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo" FromRole="PersonaXObraAdministrativaDesarrollo" ToRole="ObraAdministrativaDesarrollo" />
+    <NavigationProperty Name="Persona" Relationship="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_Persona" FromRole="PersonaXObraAdministrativaDesarrollo" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="PersonaXObraDidactica">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_obra_didactica" />
+    </Key>
+    <Property Name="id_persona" Type="Int32" Nullable="false" />
+    <Property Name="id_obra_didactica" Type="Int32" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+    <NavigationProperty Name="ObraDidactica" Relationship="ExpedienteDigitalModel.FK_PersonaXObraDidactica_ObraDidactica" FromRole="PersonaXObraDidactica" ToRole="ObraDidactica" />
+    <NavigationProperty Name="Persona" Relationship="ExpedienteDigitalModel.FK_PersonaXObraDidactica_Persona" FromRole="PersonaXObraDidactica" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="PersonaXOtraObraProfesional">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_obra_profesional" />
+    </Key>
+    <Property Name="id_persona" Type="Int32" Nullable="false" />
+    <Property Name="id_obra_profesional" Type="Int32" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+    <NavigationProperty Name="OtraObraProfesional" Relationship="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_OtraObraProfesional" FromRole="PersonaXOtraObraProfesional" ToRole="OtraObraProfesional" />
+    <NavigationProperty Name="Persona" Relationship="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_Persona" FromRole="PersonaXOtraObraProfesional" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="ProyectoGraduacionGalardonado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Personas" Relationship="ExpedienteDigitalModel.PersonaXProyectoGraduacion" FromRole="ProyectoGraduacionGalardonado" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="TipoObraAdmi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ObraAdministrativaDesarrolloes" Relationship="ExpedienteDigitalModel.FK_ObraAdministrativaDesarrollo_TipoObraAdmi" FromRole="TipoObraAdmi" ToRole="ObraAdministrativaDesarrollo" />
+  </EntityType>
+  <EntityType Name="TipoObraProfesional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="OtraObraProfesionals" Relationship="ExpedienteDigitalModel.FK_OtraObraProfesional_TipoObraProfesional" FromRole="TipoObraProfesional" ToRole="OtraObraProfesional" />
+  </EntityType>
+  <Association Name="FK_Articulo_Pais">
+    <End Type="ExpedienteDigitalModel.Pai" Role="Pai" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.Articulo" Role="Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pai">
+        <PropertyRef Name="id_pais" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Capitulo_Libro">
+    <End Type="ExpedienteDigitalModel.Libro" Role="Libro" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.Capitulo" Role="Capitulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Capitulo">
+        <PropertyRef Name="id_libro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXCita_CitaDeAtestados">
+    <End Type="ExpedienteDigitalModel.CitaDeAtestado" Role="CitaDeAtestado" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXCita" Role="PersonaXCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CitaDeAtestado">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXCita">
+        <PropertyRef Name="id_cita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXDesarrolloSoftware_DesarrolloSoftware">
+    <End Type="ExpedienteDigitalModel.DesarrolloSoftware" Role="DesarrolloSoftware" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXDesarrolloSoftware" Role="PersonaXDesarrolloSoftware" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DesarrolloSoftware">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXDesarrolloSoftware">
+        <PropertyRef Name="id_desarrollo_software" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Libro_Pais">
+    <End Type="ExpedienteDigitalModel.Pai" Role="Pai" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.Libro" Role="Libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pai">
+        <PropertyRef Name="id_pais" />
+      </Principal>
+      <Dependent Role="Libro">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObraAdministrativaDesarrollo_TipoObraAdmi">
+    <End Type="ExpedienteDigitalModel.TipoObraAdmi" Role="TipoObraAdmi" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.ObraAdministrativaDesarrollo" Role="ObraAdministrativaDesarrollo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoObraAdmi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ObraAdministrativaDesarrollo">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo">
+    <End Type="ExpedienteDigitalModel.ObraAdministrativaDesarrollo" Role="ObraAdministrativaDesarrollo" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXObraAdministrativaDesarrollo" Role="PersonaXObraAdministrativaDesarrollo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObraAdministrativaDesarrollo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraAdministrativaDesarrollo">
+        <PropertyRef Name="id_obra_administrativa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraDidactica_ObraDidactica">
+    <End Type="ExpedienteDigitalModel.ObraDidactica" Role="ObraDidactica" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXObraDidactica" Role="PersonaXObraDidactica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObraDidactica">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraDidactica">
+        <PropertyRef Name="id_obra_didactica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OtraObraProfesional_TipoObraProfesional">
+    <End Type="ExpedienteDigitalModel.TipoObraProfesional" Role="TipoObraProfesional" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.OtraObraProfesional" Role="OtraObraProfesional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoObraProfesional">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OtraObraProfesional">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXOtraObraProfesional_OtraObraProfesional">
+    <End Type="ExpedienteDigitalModel.OtraObraProfesional" Role="OtraObraProfesional" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXOtraObraProfesional" Role="PersonaXOtraObraProfesional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OtraObraProfesional">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXOtraObraProfesional">
+        <PropertyRef Name="id_obra_profesional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXCita_Persona">
+    <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXCita" Role="PersonaXCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXCita">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXDesarrolloSoftware_Persona">
+    <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXDesarrolloSoftware" Role="PersonaXDesarrolloSoftware" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXDesarrolloSoftware">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraAdministrativaDesarrollo_Persona">
+    <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXObraAdministrativaDesarrollo" Role="PersonaXObraAdministrativaDesarrollo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraAdministrativaDesarrollo">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraDidactica_Persona">
+    <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXObraDidactica" Role="PersonaXObraDidactica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraDidactica">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXOtraObraProfesional_Persona">
+    <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="ExpedienteDigitalModel.PersonaXOtraObraProfesional" Role="PersonaXOtraObraProfesional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXOtraObraProfesional">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaXArticulo">
+    <End Type="ExpedienteDigitalModel.Articulo" Role="Articulo" Multiplicity="*" />
+    <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="*" />
+  </Association>
+  <Association Name="PersonaXProyectoGraduacion">
+    <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="*" />
+    <End Type="ExpedienteDigitalModel.ProyectoGraduacionGalardonado" Role="ProyectoGraduacionGalardonado" Multiplicity="*" />
+  </Association>
+</Schema>

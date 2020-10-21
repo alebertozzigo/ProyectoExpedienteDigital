@@ -1,0 +1,153 @@
+﻿@model ExpDigital.Models.Articulo
+
+@{
+    ViewBag.Title = "CreateArticulo";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Articulos</h1>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form onsubmit="submitArticulos">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Título del Artículo</label>
+                            <div>
+                                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.titulo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputEmail4">Año</label>
+                            <div>
+                                @Html.EditorFor(model => model.anno, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.anno, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Nombre de la Revista</label>
+                            <div>
+                                @Html.EditorFor(model => model.revista, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.revista, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputEmail4">País</label>
+                            <div>
+                                @Html.EditorFor(model => model.id_pais, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.id_pais, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @* <div class="form-group col-md-8">
+            <label for="inputState">Número de autores</label>
+            <select id="selectArticulos" class="form-control">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+        </div>*@
+
+
+
+            @Html.DropDownListFor(m => m.numeroAutores, Enumerable.Range(1, 10).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }),"1", new { @class = "form-group col-md-8", @required = "required", @id = "selectArticulos" ,@onclick = "selectArticulos" } )
+
+
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <table class="table table-bordered table-hover" id="tab_logic">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    #
+                                                </th>
+                                                <th class="text-center">
+                                                    Nombre del autor
+                                                </th>
+                                                <th class="text-center">
+                                                    Correo electrónico
+                                                </th>
+                                                <th class="text-center">
+                                                    Distribución porcentual de autoría
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id='autor0'>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    <input type="text" name='nombre0' placeholder='Nombre del autor' class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name='mail0' placeholder='Correo electrónico' class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name='dist0' placeholder='Distribución porcentual' class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr id='autor1'></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <br />
+                    <br />
+                    <p class="text-info">Subir PDF:</p>
+                    <div class="form-group mt-3">
+
+                        <input type="file" name="file">
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <p>El libro posee consejo editorial?</p>
+
+                    <form>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="customRadio" name="example" value="customEx">
+                            <label class="custom-control-label" for="customRadio">SI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="customRadio2" name="example" value="customEx">
+                            <label class="custom-control-label" for="customRadio2">NO</label>
+                        </div>
+                    </form>
+                    <br />
+                    <br />
+
+                    <button type="submit" class="btn btn-outline-primary">Agregar otro Artículo</button>
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+}
