@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExpedienteDigitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroAutores" Type="int" Nullable="false" />
+    <Property Name="anno" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="revista" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_pais" Type="int" Nullable="false" />
+    <Property Name="consejoEditorial" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Capitulo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroAutores" Type="int" Nullable="false" />
+    <Property Name="id_libro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CitaDeAtestados">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="fechaFin" Type="datetime" Nullable="false" />
+    <Property Name="contrasenna" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DesarrolloSoftware">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroAutores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Libro">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="anno" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="editorial" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="consejoEditorial" Type="int" Nullable="false" />
+    <Property Name="id_pais" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObraAdministrativaDesarrollo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroAutores" Type="int" Nullable="false" />
+    <Property Name="id_tipo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObraArtistica">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroAutores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObraDidactica">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroAutores" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtraObraProfesional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroAutores" Type="int" Nullable="false" />
+    <Property Name="id_tipo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="id_pais" />
+    </Key>
+    <Property Name="id_pais" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cedula" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellido1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellido2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="categoria" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXArticulo">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_articulo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXCita">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_cita" />
+    </Key>
+    <Property Name="id_persona_x_cita" Type="int" Nullable="false" />
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_cita" Type="int" Nullable="false" />
+    <Property Name="fechaEntrega" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXDesarrolloSoftware">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_desarrollo_software" />
+    </Key>
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_desarrollo_software" Type="int" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXObraAdministrativaDesarrollo">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_obra_administrativa" />
+    </Key>
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_obra_administrativa" Type="int" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXObraDidactica">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_obra_didactica" />
+    </Key>
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_obra_didactica" Type="int" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXOtraObraProfesional">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_obra_profesional" />
+    </Key>
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_obra_profesional" Type="int" Nullable="false" />
+    <Property Name="distribucionAutoria" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXProyectoGraduacion">
+    <Key>
+      <PropertyRef Name="id_persona" />
+      <PropertyRef Name="id_proyecto_graduacion" />
+    </Key>
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_proyecto_graduacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProyectoGraduacionGalardonado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoObraAdmi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoObraProfesional">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Articulo_Pais">
+    <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="id_pais" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Capitulo_Libro">
+    <End Role="Libro" Type="Self.Libro" Multiplicity="1" />
+    <End Role="Capitulo" Type="Self.Capitulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Capitulo">
+        <PropertyRef Name="id_libro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Libro_Pais">
+    <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+    <End Role="Libro" Type="Self.Libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="id_pais" />
+      </Principal>
+      <Dependent Role="Libro">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObraAdministrativaDesarrollo_TipoObraAdmi">
+    <End Role="TipoObraAdmi" Type="Self.TipoObraAdmi" Multiplicity="1" />
+    <End Role="ObraAdministrativaDesarrollo" Type="Self.ObraAdministrativaDesarrollo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoObraAdmi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ObraAdministrativaDesarrollo">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OtraObraProfesional_TipoObraProfesional">
+    <End Role="TipoObraProfesional" Type="Self.TipoObraProfesional" Multiplicity="1" />
+    <End Role="OtraObraProfesional" Type="Self.OtraObraProfesional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoObraProfesional">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OtraObraProfesional">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXArticulo_Articulo">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="PersonaXArticulo" Type="Self.PersonaXArticulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXArticulo">
+        <PropertyRef Name="id_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXArticulo_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXArticulo" Type="Self.PersonaXArticulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXArticulo">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXCita_CitaDeAtestados">
+    <End Role="CitaDeAtestados" Type="Self.CitaDeAtestados" Multiplicity="1" />
+    <End Role="PersonaXCita" Type="Self.PersonaXCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CitaDeAtestados">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXCita">
+        <PropertyRef Name="id_cita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXCita_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXCita" Type="Self.PersonaXCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXCita">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXDesarrolloSoftware_DesarrolloSoftware">
+    <End Role="DesarrolloSoftware" Type="Self.DesarrolloSoftware" Multiplicity="1" />
+    <End Role="PersonaXDesarrolloSoftware" Type="Self.PersonaXDesarrolloSoftware" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DesarrolloSoftware">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXDesarrolloSoftware">
+        <PropertyRef Name="id_desarrollo_software" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXDesarrolloSoftware_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXDesarrolloSoftware" Type="Self.PersonaXDesarrolloSoftware" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXDesarrolloSoftware">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo">
+    <End Role="ObraAdministrativaDesarrollo" Type="Self.ObraAdministrativaDesarrollo" Multiplicity="1" />
+    <End Role="PersonaXObraAdministrativaDesarrollo" Type="Self.PersonaXObraAdministrativaDesarrollo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObraAdministrativaDesarrollo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraAdministrativaDesarrollo">
+        <PropertyRef Name="id_obra_administrativa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraAdministrativaDesarrollo_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXObraAdministrativaDesarrollo" Type="Self.PersonaXObraAdministrativaDesarrollo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraAdministrativaDesarrollo">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraDidactica_ObraDidactica">
+    <End Role="ObraDidactica" Type="Self.ObraDidactica" Multiplicity="1" />
+    <End Role="PersonaXObraDidactica" Type="Self.PersonaXObraDidactica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObraDidactica">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraDidactica">
+        <PropertyRef Name="id_obra_didactica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXObraDidactica_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXObraDidactica" Type="Self.PersonaXObraDidactica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXObraDidactica">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXOtraObraProfesional_OtraObraProfesional">
+    <End Role="OtraObraProfesional" Type="Self.OtraObraProfesional" Multiplicity="1" />
+    <End Role="PersonaXOtraObraProfesional" Type="Self.PersonaXOtraObraProfesional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OtraObraProfesional">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXOtraObraProfesional">
+        <PropertyRef Name="id_obra_profesional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXOtraObraProfesional_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXOtraObraProfesional" Type="Self.PersonaXOtraObraProfesional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXOtraObraProfesional">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXProyectoGraduacion_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXProyectoGraduacion" Type="Self.PersonaXProyectoGraduacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXProyectoGraduacion">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXProyectoGraduacion_ProyectoGraduacionGalardonado">
+    <End Role="ProyectoGraduacionGalardonado" Type="Self.ProyectoGraduacionGalardonado" Multiplicity="1" />
+    <End Role="PersonaXProyectoGraduacion" Type="Self.PersonaXProyectoGraduacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProyectoGraduacionGalardonado">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXProyectoGraduacion">
+        <PropertyRef Name="id_proyecto_graduacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ExpedienteDigitalModelStoreContainer">
+    <EntitySet Name="Articulo" EntityType="Self.Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Capitulo" EntityType="Self.Capitulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CitaDeAtestados" EntityType="Self.CitaDeAtestados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DesarrolloSoftware" EntityType="Self.DesarrolloSoftware" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Libro" EntityType="Self.Libro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ObraAdministrativaDesarrollo" EntityType="Self.ObraAdministrativaDesarrollo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ObraArtistica" EntityType="Self.ObraArtistica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ObraDidactica" EntityType="Self.ObraDidactica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtraObraProfesional" EntityType="Self.OtraObraProfesional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXArticulo" EntityType="Self.PersonaXArticulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXCita" EntityType="Self.PersonaXCita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXDesarrolloSoftware" EntityType="Self.PersonaXDesarrolloSoftware" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXObraAdministrativaDesarrollo" EntityType="Self.PersonaXObraAdministrativaDesarrollo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXObraDidactica" EntityType="Self.PersonaXObraDidactica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXOtraObraProfesional" EntityType="Self.PersonaXOtraObraProfesional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXProyectoGraduacion" EntityType="Self.PersonaXProyectoGraduacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProyectoGraduacionGalardonado" EntityType="Self.ProyectoGraduacionGalardonado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoObraAdmi" EntityType="Self.TipoObraAdmi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoObraProfesional" EntityType="Self.TipoObraProfesional" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Articulo_Pais" Association="Self.FK_Articulo_Pais">
+      <End Role="Pais" EntitySet="Pais" />
+      <End Role="Articulo" EntitySet="Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Capitulo_Libro" Association="Self.FK_Capitulo_Libro">
+      <End Role="Libro" EntitySet="Libro" />
+      <End Role="Capitulo" EntitySet="Capitulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Libro_Pais" Association="Self.FK_Libro_Pais">
+      <End Role="Pais" EntitySet="Pais" />
+      <End Role="Libro" EntitySet="Libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObraAdministrativaDesarrollo_TipoObraAdmi" Association="Self.FK_ObraAdministrativaDesarrollo_TipoObraAdmi">
+      <End Role="TipoObraAdmi" EntitySet="TipoObraAdmi" />
+      <End Role="ObraAdministrativaDesarrollo" EntitySet="ObraAdministrativaDesarrollo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OtraObraProfesional_TipoObraProfesional" Association="Self.FK_OtraObraProfesional_TipoObraProfesional">
+      <End Role="TipoObraProfesional" EntitySet="TipoObraProfesional" />
+      <End Role="OtraObraProfesional" EntitySet="OtraObraProfesional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXArticulo_Articulo" Association="Self.FK_PersonaXArticulo_Articulo">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="PersonaXArticulo" EntitySet="PersonaXArticulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXArticulo_Persona" Association="Self.FK_PersonaXArticulo_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXArticulo" EntitySet="PersonaXArticulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXCita_CitaDeAtestados" Association="Self.FK_PersonaXCita_CitaDeAtestados">
+      <End Role="CitaDeAtestados" EntitySet="CitaDeAtestados" />
+      <End Role="PersonaXCita" EntitySet="PersonaXCita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXCita_Persona" Association="Self.FK_PersonaXCita_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXCita" EntitySet="PersonaXCita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXDesarrolloSoftware_DesarrolloSoftware" Association="Self.FK_PersonaXDesarrolloSoftware_DesarrolloSoftware">
+      <End Role="DesarrolloSoftware" EntitySet="DesarrolloSoftware" />
+      <End Role="PersonaXDesarrolloSoftware" EntitySet="PersonaXDesarrolloSoftware" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXDesarrolloSoftware_Persona" Association="Self.FK_PersonaXDesarrolloSoftware_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXDesarrolloSoftware" EntitySet="PersonaXDesarrolloSoftware" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo" Association="Self.FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo">
+      <End Role="ObraAdministrativaDesarrollo" EntitySet="ObraAdministrativaDesarrollo" />
+      <End Role="PersonaXObraAdministrativaDesarrollo" EntitySet="PersonaXObraAdministrativaDesarrollo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraAdministrativaDesarrollo_Persona" Association="Self.FK_PersonaXObraAdministrativaDesarrollo_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXObraAdministrativaDesarrollo" EntitySet="PersonaXObraAdministrativaDesarrollo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraDidactica_ObraDidactica" Association="Self.FK_PersonaXObraDidactica_ObraDidactica">
+      <End Role="ObraDidactica" EntitySet="ObraDidactica" />
+      <End Role="PersonaXObraDidactica" EntitySet="PersonaXObraDidactica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXObraDidactica_Persona" Association="Self.FK_PersonaXObraDidactica_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXObraDidactica" EntitySet="PersonaXObraDidactica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXOtraObraProfesional_OtraObraProfesional" Association="Self.FK_PersonaXOtraObraProfesional_OtraObraProfesional">
+      <End Role="OtraObraProfesional" EntitySet="OtraObraProfesional" />
+      <End Role="PersonaXOtraObraProfesional" EntitySet="PersonaXOtraObraProfesional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXOtraObraProfesional_Persona" Association="Self.FK_PersonaXOtraObraProfesional_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXOtraObraProfesional" EntitySet="PersonaXOtraObraProfesional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXProyectoGraduacion_Persona" Association="Self.FK_PersonaXProyectoGraduacion_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXProyectoGraduacion" EntitySet="PersonaXProyectoGraduacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXProyectoGraduacion_ProyectoGraduacionGalardonado" Association="Self.FK_PersonaXProyectoGraduacion_ProyectoGraduacionGalardonado">
+      <End Role="ProyectoGraduacionGalardonado" EntitySet="ProyectoGraduacionGalardonado" />
+      <End Role="PersonaXProyectoGraduacion" EntitySet="PersonaXProyectoGraduacion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

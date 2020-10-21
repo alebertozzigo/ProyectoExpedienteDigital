@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExpedienteDigitalModelStoreContainer" CdmEntityContainer="ExpedienteDigitalEntities">
+    <EntitySetMapping Name="Articuloes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.Articulo">
+        <MappingFragment StoreEntitySet="Articulo">
+          <ScalarProperty Name="consejoEditorial" ColumnName="consejoEditorial" />
+          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+          <ScalarProperty Name="revista" ColumnName="revista" />
+          <ScalarProperty Name="anno" ColumnName="anno" />
+          <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Capituloes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.Capitulo">
+        <MappingFragment StoreEntitySet="Capitulo">
+          <ScalarProperty Name="id_libro" ColumnName="id_libro" />
+          <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CitaDeAtestados">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.CitaDeAtestado">
+        <MappingFragment StoreEntitySet="CitaDeAtestados">
+          <ScalarProperty Name="contrasenna" ColumnName="contrasenna" />
+          <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesarrolloSoftwares">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.DesarrolloSoftware">
+        <MappingFragment StoreEntitySet="DesarrolloSoftware">
+          <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libroes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.Libro">
+        <MappingFragment StoreEntitySet="Libro">
+          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+          <ScalarProperty Name="consejoEditorial" ColumnName="consejoEditorial" />
+          <ScalarProperty Name="editorial" ColumnName="editorial" />
+          <ScalarProperty Name="anno" ColumnName="anno" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObraAdministrativaDesarrolloes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.ObraAdministrativaDesarrollo">
+        <MappingFragment StoreEntitySet="ObraAdministrativaDesarrollo">
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObraArtisticas">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.ObraArtistica">
+        <MappingFragment StoreEntitySet="ObraArtistica">
+          <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObraDidacticas">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.ObraDidactica">
+        <MappingFragment StoreEntitySet="ObraDidactica">
+          <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtraObraProfesionals">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.OtraObraProfesional">
+        <MappingFragment StoreEntitySet="OtraObraProfesional">
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pais">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.Pai">
+        <MappingFragment StoreEntitySet="Pais">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+          <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonaXCitas">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXCita">
+        <MappingFragment StoreEntitySet="PersonaXCita">
+          <ScalarProperty Name="fechaEntrega" ColumnName="fechaEntrega" />
+          <ScalarProperty Name="id_cita" ColumnName="id_cita" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+          <ScalarProperty Name="id_persona_x_cita" ColumnName="id_persona_x_cita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonaXDesarrolloSoftwares">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXDesarrolloSoftware">
+        <MappingFragment StoreEntitySet="PersonaXDesarrolloSoftware">
+          <ScalarProperty Name="distribucionAutoria" ColumnName="distribucionAutoria" />
+          <ScalarProperty Name="id_desarrollo_software" ColumnName="id_desarrollo_software" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonaXObraAdministrativaDesarrolloes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXObraAdministrativaDesarrollo">
+        <MappingFragment StoreEntitySet="PersonaXObraAdministrativaDesarrollo">
+          <ScalarProperty Name="distribucionAutoria" ColumnName="distribucionAutoria" />
+          <ScalarProperty Name="id_obra_administrativa" ColumnName="id_obra_administrativa" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonaXObraDidacticas">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXObraDidactica">
+        <MappingFragment StoreEntitySet="PersonaXObraDidactica">
+          <ScalarProperty Name="distribucionAutoria" ColumnName="distribucionAutoria" />
+          <ScalarProperty Name="id_obra_didactica" ColumnName="id_obra_didactica" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonaXOtraObraProfesionals">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXOtraObraProfesional">
+        <MappingFragment StoreEntitySet="PersonaXOtraObraProfesional">
+          <ScalarProperty Name="distribucionAutoria" ColumnName="distribucionAutoria" />
+          <ScalarProperty Name="id_obra_profesional" ColumnName="id_obra_profesional" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProyectoGraduacionGalardonadoes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.ProyectoGraduacionGalardonado">
+        <MappingFragment StoreEntitySet="ProyectoGraduacionGalardonado">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoObraAdmis">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.TipoObraAdmi">
+        <MappingFragment StoreEntitySet="TipoObraAdmi">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoObraProfesionals">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.TipoObraProfesional">
+        <MappingFragment StoreEntitySet="TipoObraProfesional">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PersonaXArticulo" TypeName="ExpedienteDigitalModel.PersonaXArticulo" StoreEntitySet="PersonaXArticulo">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="ID" ColumnName="id_persona" />
+      </EndProperty>
+      <EndProperty Name="Articulo">
+        <ScalarProperty Name="ID" ColumnName="id_articulo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaXProyectoGraduacion" TypeName="ExpedienteDigitalModel.PersonaXProyectoGraduacion" StoreEntitySet="PersonaXProyectoGraduacion">
+      <EndProperty Name="ProyectoGraduacionGalardonado">
+        <ScalarProperty Name="ID" ColumnName="id_proyecto_graduacion" />
+      </EndProperty>
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="ID" ColumnName="id_persona" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
