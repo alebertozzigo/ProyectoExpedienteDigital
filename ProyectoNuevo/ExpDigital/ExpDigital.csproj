@@ -377,6 +377,7 @@
     <Content Include="Views\Libro\Details.cshtml" />
     <Content Include="Views\Libro\Edit.cshtml" />
     <Content Include="Views\Libro\Index.cshtml" />
+    <Content Include="Views\Libro\CreateLibro.cshtml" />
     <None Include="Views\Persona\CreatePersona.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

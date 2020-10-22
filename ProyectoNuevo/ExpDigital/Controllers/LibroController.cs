@@ -37,7 +37,7 @@ namespace ExpDigital.Controllers
         }
 
         // GET: Libro/Create
-        public ActionResult Create()
+        public ActionResult CreateLibro()
         {
             ViewBag.id_pais = new SelectList(db.Pais, "id_pais", "nombre");
             return View();
@@ -48,7 +48,7 @@ namespace ExpDigital.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,titulo,anno,editorial,consejoEditorial,id_pais")] Libro libro)
+        public ActionResult CreateLibro([Bind(Include = "ID,titulo,anno,editorial,consejoEditorial,id_pais")] Libro libro)
         {
             if (ModelState.IsValid)
             {
