@@ -54,7 +54,7 @@ namespace ExpDigital.Controllers
             {
                 db.Libroes.Add(libro);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("CreateLibro");
             }
 
             ViewBag.id_pais = new SelectList(db.Pais, "id_pais", "nombre", libro.id_pais);
