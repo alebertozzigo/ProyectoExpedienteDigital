@@ -21,7 +21,7 @@ $(document).ready(function () {
         while (i2 < $(this).val()) {
             $('#autor' + i2).html("<td>" + (i2 + 1) + "</td><td><input name='nombre" + i2 + "' type='text' placeholder='Capítulo o Sección' class='form-control input-md'  /> </td> \
                 <td rowspan='1'><input type='button' value='Agregar Autor' id='button' class='btn btn-primary' onclick='addNewOption(" + i2 + ")'> \
-                <input type='button' value='Remover Autor' id='button' class='btn btn-danger' onclick='removeOption(" + i2 + ")'> </td > \
+                <input type='button' value='Remover Autor' id='button' class='btn btn-danger' onclick='removeOption(" + i2 + ")'> </td > <td id='col"+i2+"'></td> \
               ");
 
 

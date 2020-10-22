@@ -134,6 +134,7 @@
     <Compile Include="Controllers\CitaDeAtestadoController.cs" />
     <Compile Include="Controllers\DesarrolloSoftwareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LibroController.cs" />
     <Compile Include="Controllers\ObraAdministrativaDesarrolloController.cs" />
     <Compile Include="Controllers\ObraDidacticaController.cs" />
     <Compile Include="Controllers\PaiController.cs" />
@@ -371,6 +372,12 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Views\Articulo\CreateArticulo.cshtml" />
+    <Content Include="Views\Libro\Create.cshtml" />
+    <Content Include="Views\Libro\Delete.cshtml" />
+    <Content Include="Views\Libro\Details.cshtml" />
+    <Content Include="Views\Libro\Edit.cshtml" />
+    <Content Include="Views\Libro\Index.cshtml" />
+    <Content Include="Views\Libro\CreateLibro.cshtml" />
     <None Include="Views\Persona\CreatePersona.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
